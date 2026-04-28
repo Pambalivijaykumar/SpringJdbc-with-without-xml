@@ -1,41 +1,49 @@
-# SpringJdbc-with-without-xml
+Spring JDBC (With and Without XML Configuration)
 
-Spring JDBC Example (JdbcTemplate + RowMapper)
+This project demonstrates how to use Spring JDBC (JdbcTemplate) for database operations using both:
 
-This project demonstrates how to use Spring JDBC (JdbcTemplate) to interact with a database and map results to Java objects.
-
+XML-based configuration
+Java-based configuration (No XML)
 Overview
-Uses Spring’s JdbcTemplate for database operations
-Executes SQL queries to fetch and modify data
-Converts database rows into Java objects using RowMapper
+
+The project shows how to:
+
+Connect to a relational database
+Execute SQL queries using JdbcTemplate
+Map database records to Java objects using RowMapper
+Perform CRUD operations (Create, Read, Update, Delete)
 Project Structure
-Student.java → Entity class representing a student record
-SpringJdbcNoXml.java → Main class to execute database operations
+Entity
+Student.java → Represents a student record (id, marks, name)
+Modules
+XML-based configuration example
+Java-based (No XML) configuration example
 Features
-1. Fetch Multiple Records
+Fetch Multiple Records
 Uses query()
 Returns a list of Student objects
-2. Fetch Single Record
+Fetch Single Record
 Uses queryForObject()
-Retrieves one student by ID
-3. Insert & Update
+Retrieves one record using ID
+Insert & Update
 Uses update()
 Performs insert and update operations
-4. Delete Record
+Delete Record
 Uses update()
-Deletes a student by ID
+Deletes data from the database
 Key Concepts
 JdbcTemplate
-Simplifies JDBC code
-Handles connection, query execution, and exceptions
+Core class of Spring JDBC
+Handles connection, query execution, and exception handling
 RowMapper
-Maps each row of ResultSet to a Student object
+Maps each row of ResultSet to a Java object
 Execution Flow
+Configure DataSource and JdbcTemplate (XML or Java config)
 Load Spring context
 Get JdbcTemplate bean
 Execute SQL queries
 Map results using RowMapper
-Print or process data
+Print or process output
 Sample Output
 [Student [studentId=1, marks=85, name=John],
  Student [studentId=2, marks=90, name=Alice]]
